@@ -17,7 +17,22 @@ namespace ClickBot
         public Form1()
         {
             InitializeComponent();
-            this.timer1.Interval = 10;
+            this.tmrMain.Interval = 10;
+
+            // Checkbox change event
+            this.cbxTopMost.CheckedChanged += (sender, e) =>
+            {
+                this.TopMost = ((CheckBox)sender).Checked;
+            };
+
+            // Timer tick event
+            this.tmrMain.Tick += (sender, e) =>
+            {
+                if (!(Control.ModifierKeys == Keys.Alt))
+                {
+                    Program.LeftMouseClick(this.currentPosition.X, this.currentPosition.Y);
+                }
+            };
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -35,33 +50,25 @@ namespace ClickBot
                         break;
 
                     case "terminate":
-                        this.timer1.Stop();
+                        this.tmrMain.Stop();
                         break;
 
                     case "start":
-                        this.timer1.Start();
+                        this.tmrMain.Start();
                         break;
                 }
             };
 
             this.hotkey.AddHotKey(Keys.P, HotKey.MODKEY.MOD_CONTROL, "position");
-            this.hotkey.AddHotKey(Keys.T, HotKey.MODKEY.MOD_CONTROL, "terminate");
-            this.hotkey.AddHotKey(Keys.R, HotKey.MODKEY.MOD_CONTROL, "start");
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if (!(Control.ModifierKeys == Keys.Alt))
-            {
-                Program.LeftMouseClick(this.currentPosition.X, this.currentPosition.Y);
-            }
+            this.hotkey.AddHotKey(Keys.T, HotKey.MODKEY.MOD_CONTROL, "terminate"); // or "stop"
+            this.hotkey.AddHotKey(Keys.R, HotKey.MODKEY.MOD_CONTROL, "start"); // or "run"
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             int x = Int32.Parse(tbxX.Text), y = Int32.Parse(tbxY.Text);
             this.currentPosition = new Point(x, y);
-            this.timer1.Start();
+            this.tmrMain.Start();
         }
     }
 }
