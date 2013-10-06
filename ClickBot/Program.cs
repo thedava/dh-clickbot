@@ -10,7 +10,7 @@ namespace ClickBot
     {
         const int THRESHOLD = 5;
 
-        //This is a replacement for Cursor.Position in WinForms
+        // This is a replacement for Cursor.Position in WinForms
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern bool SetCursorPos(int x, int y);
 
@@ -20,7 +20,7 @@ namespace ClickBot
         public const int MOUSEEVENTF_LEFTDOWN = 0x02;
         public const int MOUSEEVENTF_LEFTUP = 0x04;
 
-        //This simulates a left mouse click
+        // This simulates a left mouse click
         public static void LeftMouseClick(int xpos, int ypos)
         {
             Point pt = Cursor.Position;
@@ -29,6 +29,7 @@ namespace ClickBot
                 minY = ypos - THRESHOLD,
                 maxY = ypos + THRESHOLD;
 
+            // Provide some "buffer space" (so that the program doesn't need to reset the mouse on every tick)
             if (minX > pt.X || maxX < pt.X || minY > pt.Y || maxY < pt.Y)
             {
                 SetCursorPos(xpos, ypos);
@@ -46,7 +47,7 @@ namespace ClickBot
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MainForm());
         }
     }
 }
