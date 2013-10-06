@@ -1,6 +1,6 @@
 ﻿namespace ClickBot
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Erforderliche Designervariable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnStart = new System.Windows.Forms.Button();
             this.tbxX = new System.Windows.Forms.TextBox();
             this.tbxY = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,15 +39,15 @@
             this.cbxTopMost = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
-            // button1
+            // btnStart
             // 
-            this.button1.Location = new System.Drawing.Point(99, 194);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Start Clicking";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnStart.Location = new System.Drawing.Point(99, 194);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(75, 23);
+            this.btnStart.TabIndex = 0;
+            this.btnStart.Text = "Start Clicking";
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // tbxX
             // 
@@ -91,6 +91,10 @@
                 "\"Ctrl + R\" to start\r\nKeep \"Alt\" pressed to use click";
             this.lblInfo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // tmrMain
+            // 
+            this.tmrMain.Interval = 10;
+            // 
             // cbxTopMost
             // 
             this.cbxTopMost.AutoSize = true;
@@ -101,7 +105,7 @@
             this.cbxTopMost.Text = "Keep in Foreground";
             this.cbxTopMost.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -112,8 +116,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbxY);
             this.Controls.Add(this.tbxX);
-            this.Controls.Add(this.button1);
-            this.Name = "Form1";
+            this.Controls.Add(this.btnStart);
+            this.Name = "MainForm";
             this.Text = "ClickBot 0.1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -123,7 +127,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.TextBox tbxX;
         private System.Windows.Forms.TextBox tbxY;
         private System.Windows.Forms.Label label1;
