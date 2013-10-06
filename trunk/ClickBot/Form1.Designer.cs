@@ -34,11 +34,9 @@
             this.tbxY = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblInfo = new System.Windows.Forms.Label();
+            this.tmrMain = new System.Windows.Forms.Timer(this.components);
+            this.cbxTopMost = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // button1
@@ -53,14 +51,14 @@
             // 
             // tbxX
             // 
-            this.tbxX.Location = new System.Drawing.Point(34, 147);
+            this.tbxX.Location = new System.Drawing.Point(34, 168);
             this.tbxX.Name = "tbxX";
             this.tbxX.Size = new System.Drawing.Size(100, 20);
             this.tbxX.TabIndex = 1;
             // 
             // tbxY
             // 
-            this.tbxY.Location = new System.Drawing.Point(142, 147);
+            this.tbxY.Location = new System.Drawing.Point(142, 168);
             this.tbxY.Name = "tbxY";
             this.tbxY.Size = new System.Drawing.Size(100, 20);
             this.tbxY.TabIndex = 2;
@@ -68,7 +66,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 131);
+            this.label1.Location = new System.Drawing.Point(31, 152);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(12, 13);
             this.label1.TabIndex = 3;
@@ -77,61 +75,39 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(139, 131);
+            this.label2.Location = new System.Drawing.Point(139, 152);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(12, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "y";
             // 
-            // label3
+            // lblInfo
             // 
-            this.label3.Location = new System.Drawing.Point(12, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(248, 19);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Press \"Ctrl + P\" to use current Cursor Position";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblInfo.Location = new System.Drawing.Point(12, 9);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(248, 65);
+            this.lblInfo.TabIndex = 5;
+            this.lblInfo.Text = "Press \"Ctrl + P\" to use current Cursor Position\r\nPress \"Ctrl + T\" to stop\r\nPress " +
+                "\"Ctrl + R\" to start\r\nKeep \"Alt\" pressed to use click";
+            this.lblInfo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label4
+            // cbxTopMost
             // 
-            this.label4.Location = new System.Drawing.Point(12, 28);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(248, 19);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Press \"Ctrl + T\" to stop";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // label5
-            // 
-            this.label5.Location = new System.Drawing.Point(12, 47);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(248, 19);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Press \"Ctrl + R\" to start";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label6
-            // 
-            this.label6.Location = new System.Drawing.Point(12, 66);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(248, 19);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Keep \"Alt\" pressed to use click";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.cbxTopMost.AutoSize = true;
+            this.cbxTopMost.Location = new System.Drawing.Point(77, 108);
+            this.cbxTopMost.Name = "cbxTopMost";
+            this.cbxTopMost.Size = new System.Drawing.Size(119, 17);
+            this.cbxTopMost.TabIndex = 6;
+            this.cbxTopMost.Text = "Keep in Foreground";
+            this.cbxTopMost.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(272, 229);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.cbxTopMost);
+            this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbxY);
@@ -152,11 +128,9 @@
         private System.Windows.Forms.TextBox tbxY;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblInfo;
+        private System.Windows.Forms.Timer tmrMain;
+        private System.Windows.Forms.CheckBox cbxTopMost;
     }
 }
 
