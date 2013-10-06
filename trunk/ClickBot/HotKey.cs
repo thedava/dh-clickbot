@@ -13,6 +13,7 @@ using System.Runtime.InteropServices;
 /// und ihr z.B. die HotKeyID "TEST1" zugewiesen wird dann kann man später im Event nach dieser ID "TEST1" fragen
 /// und dann eine Funktion aufrufen die für diesen HotKey bestimmt wurde.
 /// </summary>
+/// <see cref="http://dotnet-snippets.de/snippet/globale-hotkeys-tastenkombinationen/356"/>
 /// <remarks>Copyright © 2006 Tim Hartwig</remarks>
 public class HotKey : IMessageFilter
 {
